@@ -1,0 +1,18 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	// Static-assets-only Worker: no `main` script, so no Worker code ever runs and every
+	// request is a free static-asset request. Nothing here can hold user data.
+	"name": "spinny",
+	"compatibility_date": "2026-09-01",
+	"assets": {
+		// build/ holds a single folder, spinny/, matching the route below.
+		"directory": "./build",
+		"not_found_handling": "404-page",
+		"html_handling": "auto-trailing-slash"
+	},
+	// Never a catch-all: other Workers own other paths on apps.nubuza.com.
+	"routes": [{ "pattern": "apps.nubuza.com/spinny*", "zone_name": "nubuza.com" }],
+	"workers_dev": false,
+	"preview_urls": true,
+	"observability": { "enabled": false }
+}

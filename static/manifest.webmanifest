@@ -1,0 +1,11 @@
+{
+	"name": "Spinny",
+	"short_name": "Spinny",
+	"description": "Spin the wheel to pick between options.",
+	"start_url": "/spinny/",
+	"scope": "/spinny/",
+	"display": "standalone",
+	"background_color": "#fff4f1",
+	"theme_color": "#fff4f1",
+	"icons": [{ "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}

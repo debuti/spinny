@@ -1,0 +1,132 @@
+:root {
+	/* Candy pastels on a warm peach cloth. */
+	--peach-50: #fff4f1;
+	--coral-100: #ffe7e3;
+	--coral-300: #ffa598;
+	--coral-500: #ef5848;
+	--coral-600: #c93a2e; /* white text 4.9:1 (WCAG AA) */
+	--ink: #3a2e3f;
+	--ink-soft: #6b5a70;
+	--white: #ffffff;
+
+	--bg: var(--peach-50);
+	--surface: var(--white);
+	--text: var(--ink);
+	--text-soft: var(--ink-soft);
+
+	--radius-md: 18px;
+	--radius-lg: 28px;
+	--radius-pill: 999px;
+	--shadow-soft: 0 10px 30px rgba(201, 58, 46, 0.1), 0 2px 6px rgba(201, 58, 46, 0.07);
+	--ring: 0 0 0 4px rgba(239, 88, 72, 0.3);
+
+	--font-display: 'Fredoka Variable', 'Nunito Variable', system-ui, sans-serif;
+	--font-body: 'Nunito Variable', system-ui, sans-serif;
+
+	color-scheme: light;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	min-height: 100%;
+	background: var(--bg);
+	color: var(--text);
+	font-family: var(--font-body);
+	font-size: 16px;
+	line-height: 1.45;
+	-webkit-font-smoothing: antialiased;
+	-webkit-tap-highlight-color: transparent;
+}
+
+body {
+	background-image: radial-gradient(rgba(239, 88, 72, 0.08) 1.6px, transparent 1.8px);
+	background-size: 22px 22px;
+}
+
+h1,
+h2,
+h3 {
+	font-family: var(--font-display);
+	font-weight: 600;
+	margin: 0;
+	line-height: 1.15;
+}
+
+a {
+	color: var(--coral-600);
+	font-weight: 700;
+}
+
+button,
+textarea {
+	font: inherit;
+	color: inherit;
+}
+
+button {
+	cursor: pointer;
+}
+
+:focus-visible {
+	outline: none;
+	box-shadow: var(--ring);
+}
+
+.card {
+	background: var(--surface);
+	border-radius: var(--radius-lg);
+	box-shadow: var(--shadow-soft);
+	padding: 20px;
+}
+
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.45em;
+	min-height: 44px;
+	padding: 0.6em 1.2em;
+	border: 0;
+	border-radius: var(--radius-pill);
+	background: var(--coral-100);
+	color: var(--coral-600);
+	font-weight: 800;
+}
+
+.btn:disabled {
+	opacity: 0.55;
+	cursor: not-allowed;
+}
+
+.btn.primary {
+	background: var(--coral-600);
+	color: var(--white);
+	box-shadow: 0 4px 0 rgba(120, 30, 22, 0.3);
+}
+
+.btn.big {
+	font-family: var(--font-display);
+	font-size: 1.35rem;
+	min-height: 56px;
+	padding: 0.5em 2em;
+}
+
+.btn.primary:active:not(:disabled) {
+	transform: translateY(2px);
+	box-shadow: 0 2px 0 rgba(120, 30, 22, 0.3);
+}
+
+.prose {
+	max-width: 680px;
+	margin: 0 auto;
+	padding: 24px 18px;
+}
+
+.prose p {
+	margin: 0 0 1em;
+}
