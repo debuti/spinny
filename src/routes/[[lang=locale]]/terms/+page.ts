@@ -1,2 +1,2 @@
-// Spanish at the root, English at /en/: both prerendered.
-export const entries = () => [{ lang: '' }, { lang: 'en' }];
+// English at the root, Spanish at /es/: both prerendered.
+export const entries = () => [{ lang: '' }, { lang: 'es' }];

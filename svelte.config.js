@@ -1,5 +1,6 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+import { readFileSync } from 'node:fs';
 
 /** The app lives under apps.nubuza.com/spinny (see wrangler.jsonc). BASE_PATH= to move it. */
 export const BASE = process.env.BASE_PATH ?? '/spinny';
@@ -9,6 +10,21 @@ const ANALYTICS = {
 	script: 'https://static.cloudflareinsights.com',
 	connect: 'https://cloudflareinsights.com'
 };
+
+/** AdSense's origins, open only once monetization.config.json has a block ID. */
+const { adsense } = JSON.parse(readFileSync('monetization.config.json', 'utf8'));
+const ADS_ON = Object.values(adsense.slots).some(Boolean);
+const AD_SCRIPTS = [
+	'https://pagead2.googlesyndication.com',
+	'https://fundingchoicesmessages.google.com',
+	'https://*.adtrafficquality.google'
+];
+const AD_FRAMES = [
+	'https://googleads.g.doubleclick.net',
+	'https://tpc.googlesyndication.com',
+	'https://www.google.com',
+	...AD_SCRIPTS
+];
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -28,13 +44,13 @@ const config = {
 			mode: 'hash',
 			directives: {
 				'default-src': ['self'],
-				'script-src': ['self', ANALYTICS.script],
+				'script-src': ['self', ANALYTICS.script, ...(ADS_ON ? AD_SCRIPTS : [])],
 				// The wheel's rotation is an inline style.
 				'style-src': ['self', 'unsafe-inline'],
-				'img-src': ['self', 'data:'],
+				'img-src': ['self', 'data:', ...(ADS_ON ? ['https:'] : [])],
 				'font-src': ['self'],
-				'connect-src': ['self', ANALYTICS.connect],
-				'frame-src': ['none'],
+				'connect-src': ['self', ANALYTICS.connect, ...(ADS_ON ? AD_FRAMES : [])],
+				'frame-src': ADS_ON ? AD_FRAMES : ['none'],
 				'worker-src': ['self'],
 				'manifest-src': ['self'],
 				'object-src': ['none'],

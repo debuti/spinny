@@ -1,6 +1,5 @@
-import type { Messages } from './index';
-
-export const en: Messages = {
+/** English is the root language and the source of truth for the shape (see i18n.test.ts). */
+export const en = {
 	meta: {
 		title: 'Spinny · Spin the wheel to pick between options',
 		description:
@@ -27,6 +26,29 @@ export const en: Messages = {
 	close: 'Close',
 	settings: 'Settings',
 	version: 'Version',
+	ad: 'Advertisement',
+	tour: {
+		label: 'Welcome to Spinny',
+		skip: 'Skip',
+		back: 'Back',
+		next: 'Next',
+		start: "Let's spin",
+		replay: 'See the intro again',
+		steps: [
+			{
+				title: "Hi, I'm Spinny!",
+				text: "I'm a decision wheel. When you can't choose between dinners, chores or who goes first, type the options and I'll pick one fairly."
+			},
+			{
+				title: 'Type your options',
+				text: 'Write one option per line: at least two, up to 100. They stay on your device, with no accounts and no server.'
+			},
+			{
+				title: 'Spin and share',
+				text: 'Tap Spin! and every option has the same chance. Then remove the winner and spin again, or share the wheel with a link.'
+			}
+		]
+	},
 	wheelLabel: 'Wheel with {n} options',
 	faqTitle: 'FAQ',
 	faq: [
@@ -51,31 +73,37 @@ export const en: Messages = {
 		by: 'An app by nubuza',
 		privacy: 'Privacy',
 		terms: 'Terms',
-		lang: 'Español'
+		lang: 'Español',
+		consent: 'Privacy and cookies'
 	},
 	privacy: {
 		title: 'Privacy',
 		body: [
-			'Spinny is made by nubuza (nubuza.com). It runs entirely in your browser: no accounts, no server, no database of ours.',
-			'Your options are stored only on your device (IndexedDB). Delete them with “Clear” or by clearing the site data in your browser.',
+			'Last updated: 5 November 2026.',
+			'Spinny is made by nubuza (nubuza.com), which is the data controller. Contact: me@nubuza.com. The app runs entirely in your browser: no accounts, no server, no database of ours, so we hold no data about you.',
+			'Your options are stored only on your device (IndexedDB), along with a note that you have seen the intro (localStorage). Delete them with “Clear” or by clearing the site data in your browser.',
 			'When you share a wheel, the options go inside the link, after the #. That part is never sent to any server; only whoever gets the link sees it.',
-			'We use Cloudflare Web Analytics to count visits in aggregate. It uses no cookies and does not identify you.',
-			'We set no cookies of our own. For any question, reach us through nubuza.com.'
-		]
+			'Cloudflare hosts the app and, like any web host, handles your IP address to serve the pages. We use Cloudflare Web Analytics to count visits in aggregate. It uses no cookies and does not identify you.',
+			'We set no cookies of our own.',
+			'Spinny is not aimed at children under 14.',
+			'You have the rights the GDPR gives you, such as access, erasure and objection. As your data lives on your device, you can delete it yourself at any time. For anything else write to me@nubuza.com. You can also complain to the Spanish data protection agency (aepd.es).'
+		],
+		ads: 'Spinny shows ads served by Google AdSense. Google and its partners may use cookies and data such as advertising identifiers, your IP address or approximate location, and your interactions with the ads. In the EU and the UK, Google’s consent message asks for your choice first, and you can change it with “Privacy and cookies” at the bottom of the page. More at policies.google.com/technologies/ads.'
 	},
 	terms: {
 		title: 'Terms',
 		body: [
+			'Last updated: 5 November 2026.',
 			'Spinny is made by nubuza ("we", "us"). By using it you accept these terms. If you don’t agree, please don’t use it. If you are under 14, a parent or guardian must accept them for you.',
 			'Spinny is free. Use it for everyday choices; not for important decisions, prize draws or gambling.',
-			"You're responsible for what you type and share. Don't put other people's personal data in a wheel.",
+			"What you type is yours and we never see it. You're responsible for what you type and share. Don't put other people's personal data in a wheel.",
 			'Acceptable use. Don’t use Spinny against the law or to harm anyone, and don’t try to break, overload, scrape or get around the security of the app or the services it uses.',
 			'Outside services. Spinny relies on services run by others: Cloudflare (hosting). Their own terms apply when you use them. We don’t control them, can’t promise they will always be available and aren’t responsible for what they do or show. Any ads are served by those services, and we aren’t responsible for what they advertise.',
 			'No warranty. Spinny is free and provided "as is" and "as available", without warranties of any kind, to the extent the law allows. We don’t promise that it is free of errors, uninterrupted, accurate or suitable for any particular purpose. You use it at your own risk and you are responsible for checking its results before relying on them, and for keeping your own backups. We may change, pause or stop the app, or any part of it, at any time.',
 			'Liability. To the extent the law allows, we are not liable for indirect or consequential damages, loss of profit, lost data, wasted material, time or money, or for how you or anyone else uses the app or what it produces. If you use the app for a business or profession, our total liability to you is limited to €1. If someone makes a claim against us because you broke these terms or the law while using the app, you are responsible for it, to the extent the law allows. Nothing in these terms limits liability that the law doesn’t allow to be limited, such as for intent, gross negligence, death or personal injury, or your rights as a consumer.',
 			'Changes to these terms. We may update these terms; the new version is published on this page with a new date. If you keep using the app after a change, you accept the new terms.',
 			'Law and disputes. If something goes wrong, please write to us first at me@nubuza.com: most problems can be fixed quickly. These terms are governed by the laws of Spain. If you use the app as a consumer, you also keep the protection of the mandatory laws of the country where you live, and you can bring a claim in your local courts. If you use it for a business or profession, the courts of Spain have exclusive jurisdiction. If any part of these terms turns out to be invalid, the rest still applies.',
-			'Copyright (c) 2026 nubuza, all rights reserved.'
+			'The app, its design and its code belong to nubuza. Copyright (c) 2026 nubuza, all rights reserved.'
 		]
 	}
 };

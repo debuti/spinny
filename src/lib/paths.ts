@@ -10,16 +10,16 @@ export type Page = (typeof PAGES)[number];
 
 /** A page's path below the base, in a language. */
 export function pagePath(locale: Locale, page: Page): string {
-	return `${locale === 'es' ? '' : `/${locale}`}/${page ? `${page}/` : ''}`;
+	return `${locale === 'en' ? '' : `/${locale}`}/${page ? `${page}/` : ''}`;
 }
 
 export function pathLocale(pathname: string): Locale {
-	return pathname.split('/')[1] === 'en' ? 'en' : 'es';
+	return pathname.split('/')[1] === 'es' ? 'es' : 'en';
 }
 
-/** A page's link, through SvelteKit's typed resolve() (Spanish leaves [[lang]] out). */
+/** A page's link, through SvelteKit's typed resolve() (English leaves [[lang]] out). */
 export function link(locale: Locale, page: Page): ResolvedPathname {
-	const lang = locale === 'es' ? undefined : locale;
+	const lang = locale === 'en' ? undefined : locale;
 	return page
 		? resolve(`/[[lang=locale]]/${page}`, { lang })
 		: resolve('/[[lang=locale]]', { lang });

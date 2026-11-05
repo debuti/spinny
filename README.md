@@ -1,7 +1,7 @@
 # Spinny
 
 Spin the wheel to pick between options. Type one option per line, spin, done. Lives at
-**apps.nubuza.com/spinny** (Spanish at `/`, English at `/en/`).
+**apps.nubuza.com/spinny** (English at `/`, Spanish at `/es/`).
 
 - No server, no accounts: options stay on the device (IndexedDB, `spinny` DB).
 - Winner picked with `crypto.getRandomValues` (no modulo bias); the wheel animates to it.
@@ -18,7 +18,7 @@ idb-keyval. Static-assets-only Cloudflare Worker (`wrangler.jsonc`, no `main`).
 npm install
 npm run dev        # http://localhost:5173/spinny/
 npm run check && npm run lint && npm test
-npm run build      # build/spinny/ + build/_headers
+npm run build      # build/spinny/ + build/_headers + build/_redirects
 npm run preview    # wrangler dev on :8788, with the real _headers
 ```
 

@@ -1,10 +1,10 @@
-// Cloudflare reads _headers from the root of the assets directory (build/), but SvelteKit
-// copies static/ into build/spinny/. Move it up and drop anything else left in build/.
+// Cloudflare reads _headers and _redirects from the root of the assets directory (build/), but SvelteKit
+// copies static/ into build/spinny/. Move them up and drop anything else left in build/.
 import { existsSync, readdirSync, renameSync, rmSync } from 'node:fs';
 
 const APP = (process.env.BASE_PATH ?? '/spinny').replace(/^\//, '');
 if (APP) {
-	const ROOT = ['_headers'];
+	const ROOT = ['_headers', '_redirects'];
 	for (const name of ROOT) {
 		const from = `build/${APP}/${name}`;
 		if (existsSync(from)) renameSync(from, `build/${name}`);

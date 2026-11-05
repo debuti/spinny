@@ -1,5 +1,6 @@
 import type { Handle } from '@sveltejs/kit';
 import { base } from '$app/paths';
+import { ADS_CLIENT, ADS_ON } from '$lib/ads';
 import { MESSAGES, LOCALES } from '$lib/i18n';
 import { PAGES, SITE, pagePath, pathLocale } from '$lib/paths';
 
@@ -15,6 +16,12 @@ export const handle: Handle = ({ event, resolve }) => {
 	const page = PAGES.find((p) => pagePath(locale, p) === path);
 	const m = MESSAGES[locale].meta;
 	const head = [
+		`<meta name="google-adsense-account" content="${ADS_CLIENT}" />`,
+		...(ADS_ON
+			? [
+					`<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADS_CLIENT}" crossorigin="anonymous"></script>`
+				]
+			: []),
 		`<meta name="description" content="${esc(m.description)}" />`,
 		`<meta property="og:title" content="${esc(m.title)}" />`,
 		`<meta property="og:description" content="${esc(m.description)}" />`,
@@ -31,7 +38,7 @@ export const handle: Handle = ({ event, resolve }) => {
 	return resolve(event, {
 		transformPageChunk: ({ html }) =>
 			html
-				.replace('<html lang="es">', `<html lang="${locale}">`)
+				.replace('<html lang="en">', `<html lang="${locale}">`)
 				.replace('%spinny.head%', head)
 				.replaceAll('%spinny.url%', `${SITE}${path}`)
 	});

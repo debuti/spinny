@@ -15,8 +15,8 @@ function leaves(o: unknown, path = ''): Map<string, string> {
 const holes = (s: string) => [...s.matchAll(/\{(\w+)\}/g)].map((m) => m[1]).sort();
 
 describe('i18n', () => {
-	it('every language has the same keys and placeholders as Spanish', () => {
-		const root = leaves(MESSAGES.es);
+	it('every language has the same keys and placeholders as English', () => {
+		const root = leaves(MESSAGES.en);
 		for (const [, m] of Object.entries(MESSAGES)) {
 			const l = leaves(m);
 			expect([...l.keys()]).toEqual([...root.keys()]);

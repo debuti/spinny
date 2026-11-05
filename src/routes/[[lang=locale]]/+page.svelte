@@ -1,7 +1,10 @@
 <script lang="ts">
 	import { onMount, tick } from 'svelte';
+	import AdSlot from '$lib/components/AdSlot.svelte';
+	import Tour from '$lib/components/Tour.svelte';
 	import Wheel from '$lib/components/Wheel.svelte';
 	import { fmt, plural } from '$lib/i18n';
+	import { link } from '$lib/paths';
 	import { loadText, saveText } from '$lib/store';
 	import {
 		decodeShare,
@@ -25,6 +28,7 @@
 	let toast = $state('');
 	let dialog = $state<HTMLDialogElement>();
 	let settingsDialog = $state<HTMLDialogElement>();
+	let tour = $state<Tour>();
 
 	const typed = $derived(parseOptions(text));
 	// Something to look at before the first options are typed.
@@ -189,6 +193,8 @@
 			</details>
 		{/each}
 	</section>
+
+	<AdSlot label={m.ad} />
 </main>
 
 <dialog bind:this={dialog} aria-labelledby="result">
@@ -207,10 +213,23 @@
 	<h2 id="settings-title">{m.settings}</h2>
 	<p class="label">{m.version}</p>
 	<p class="build">v{__APP_VERSION__} · {__APP_COMMIT__} · {__APP_BUILD_DATE__}</p>
+	<p class="legal">
+		<a href={link(data.locale, 'privacy')}>{m.footer.privacy}</a> ·
+		<a href={link(data.locale, 'terms')}>{m.footer.terms}</a>
+	</p>
 	<div class="tools">
+		<button
+			class="btn"
+			onclick={() => {
+				settingsDialog?.close();
+				tour?.open();
+			}}>{m.tour.replay}</button
+		>
 		<button class="btn" onclick={() => settingsDialog?.close()}>{m.close}</button>
 	</div>
 </dialog>
+
+<Tour bind:this={tour} m={m.tour} />
 
 <div class="toast" role="status" aria-live="polite">
 	{#if toast}<span>{toast}</span>{/if}
@@ -366,6 +385,9 @@
 		margin: 8px 0 12px;
 		font-weight: 700;
 		overflow-wrap: anywhere;
+	}
+	.legal {
+		margin: 0;
 	}
 	.toast {
 		position: fixed;

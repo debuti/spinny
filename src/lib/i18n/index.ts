@@ -1,12 +1,12 @@
 import { en } from './en';
 import { es } from './es';
 
-export type Messages = typeof es;
+export type Messages = typeof en;
 export type Plural = { one: string; other: string } & Partial<Record<Intl.LDMLPluralRule, string>>;
-export const LOCALES = ['es', 'en'] as const;
+export const LOCALES = ['en', 'es'] as const;
 export type Locale = (typeof LOCALES)[number];
 
-export const MESSAGES: Record<Locale, Messages> = { es, en };
+export const MESSAGES: Record<Locale, Messages> = { en, es };
 
 /** Replaces {name} placeholders. Values are inserted as text (Svelte escapes on render). */
 export function fmt(template: string, params: Record<string, string | number> = {}): string {

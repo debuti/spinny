@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { ADS_ON } from '$lib/ads';
 	import { link } from '$lib/paths';
 
 	let { data } = $props();
@@ -12,6 +13,7 @@
 	<h1>{c.title}</h1>
 	<div class="card">
 		{#each c.body as para, i (i)}<p>{para}</p>{/each}
+		{#if ADS_ON}<p>{c.ads}</p>{/if}
 	</div>
 </main>
 

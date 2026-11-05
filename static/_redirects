@@ -1,0 +1,3 @@
+# English moved from /en/ to the root.
+/spinny/en /spinny/ 301
+/spinny/en/* /spinny/:splat 301
