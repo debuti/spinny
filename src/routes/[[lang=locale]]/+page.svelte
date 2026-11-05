@@ -24,6 +24,7 @@
 	let winner = $state<string | null>(null);
 	let toast = $state('');
 	let dialog = $state<HTMLDialogElement>();
+	let settingsDialog = $state<HTMLDialogElement>();
 
 	const typed = $derived(parseOptions(text));
 	// Something to look at before the first options are typed.
@@ -122,6 +123,12 @@
 
 <main>
 	<header>
+		<button
+			class="settings-btn"
+			onclick={() => settingsDialog?.showModal()}
+			aria-label={m.settings}
+			title={m.settings}>⚙️</button
+		>
 		<h1>Spinny</h1>
 		<p>{m.tagline}</p>
 	</header>
@@ -196,6 +203,15 @@
 	</div>
 </dialog>
 
+<dialog bind:this={settingsDialog} aria-labelledby="settings-title">
+	<h2 id="settings-title">{m.settings}</h2>
+	<p class="label">{m.version}</p>
+	<p class="build">v{__APP_VERSION__} · {__APP_COMMIT__} · {__APP_BUILD_DATE__}</p>
+	<div class="tools">
+		<button class="btn" onclick={() => settingsDialog?.close()}>{m.close}</button>
+	</div>
+</dialog>
+
 <div class="toast" role="status" aria-live="polite">
 	{#if toast}<span>{toast}</span>{/if}
 </div>
@@ -207,8 +223,21 @@
 		padding: 20px 16px 0;
 	}
 	header {
+		position: relative;
 		text-align: center;
 		margin-bottom: 20px;
+	}
+	.settings-btn {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 44px;
+		height: 44px;
+		border: 0;
+		border-radius: 50%;
+		background: var(--coral-100);
+		font-size: 1.2rem;
+		cursor: pointer;
 	}
 	h1 {
 		font-size: 2.6rem;
@@ -331,6 +360,11 @@
 		font-size: 2.2rem;
 		font-weight: 600;
 		color: var(--coral-600);
+		overflow-wrap: anywhere;
+	}
+	.build {
+		margin: 8px 0 12px;
+		font-weight: 700;
 		overflow-wrap: anywhere;
 	}
 	.toast {

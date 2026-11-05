@@ -24,6 +24,8 @@ export const es = {
 	again: 'Otra vez',
 	removeAndSpin: 'Quitarla y girar',
 	close: 'Cerrar',
+	settings: 'Ajustes',
+	version: 'Versión',
 	wheelLabel: 'Ruleta con {n} opciones',
 	faqTitle: 'Preguntas frecuentes',
 	faq: [

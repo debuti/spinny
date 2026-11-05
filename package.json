@@ -1,6 +1,6 @@
 {
 	"name": "spinny",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"private": true,
 	"type": "module",
 	"description": "Spin the wheel to pick between options: dinner, chores, who goes first.",

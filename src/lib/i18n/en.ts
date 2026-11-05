@@ -25,6 +25,8 @@ export const en: Messages = {
 	again: 'Again',
 	removeAndSpin: 'Remove it and spin',
 	close: 'Close',
+	settings: 'Settings',
+	version: 'Version',
 	wheelLabel: 'Wheel with {n} options',
 	faqTitle: 'FAQ',
 	faq: [
