@@ -28,6 +28,24 @@ export const es: Messages = {
 	settings: 'Ajustes',
 	version: 'Versión',
 	ad: 'Publicidad',
+	lists: {
+		title: 'Listas guardadas',
+		hint: 'Guarda las opciones antes de ir quitando gente y vuelve a cargarlas cuando quieras.',
+		name: 'Nombre de la lista',
+		save: 'Guardar',
+		saved: 'Lista «{name}» guardada',
+		overwrite: '¿Sustituir la lista guardada «{name}» por las opciones que tienes ahora?',
+		load: 'Cargar',
+		loadLabel: 'Cargar la lista «{name}»',
+		loaded: 'Lista «{name}» cargada',
+		replaceCurrent:
+			'¿Sustituir las opciones que tienes ahora? No están guardadas en ninguna lista.',
+		delete: 'Borrar',
+		deleteLabel: 'Borrar la lista «{name}»',
+		confirmDelete: '¿Borrar la lista «{name}»?',
+		empty: 'Aún no hay listas guardadas.',
+		full: 'Puedes tener hasta 50 listas. Borra una para hacer sitio.'
+	},
 	tour: {
 		label: 'Te damos la bienvenida a Spinny',
 		skip: 'Saltar',
@@ -46,7 +64,7 @@ export const es: Messages = {
 			},
 			{
 				title: 'Gira y comparte',
-				text: 'Pulsa ¡Girar! y todas tienen la misma probabilidad. Después quita la ganadora y vuelve a girar, o comparte la ruleta con un enlace.'
+				text: 'Pulsa ¡Girar! y todas tienen la misma probabilidad. Después quita la ganadora y vuelve a girar, o comparte la ruleta con un enlace. Guarda tus listas para recuperarlas de un toque.'
 			}
 		]
 	},
@@ -60,6 +78,10 @@ export const es: Messages = {
 		{
 			q: '¿Dónde se guardan mis opciones?',
 			a: 'Solo en tu dispositivo, en el almacenamiento del navegador. No tenemos servidor ni base de datos: nunca vemos lo que escribes.'
+		},
+		{
+			q: '¿Puedo tener varias listas?',
+			a: 'Sí. Debajo de las opciones, ponle un nombre a la lista y pulsa Guardar. Cárgala después para recuperar todas las opciones, por ejemplo tras ir quitando ganadores uno a uno. Puedes tener hasta 50 listas.'
 		},
 		{
 			q: '¿Cómo comparto una ruleta?',
@@ -80,9 +102,9 @@ export const es: Messages = {
 	privacy: {
 		title: 'Privacidad',
 		body: [
-			'Última actualización: 5 de noviembre de 2026.',
+			'Última actualización: 13 de noviembre de 2026.',
 			'Spinny la hace nubuza (nubuza.com), que es la responsable del tratamiento. Contacto: me@nubuza.com. Funciona entera en tu navegador: no hay cuentas, ni servidor, ni base de datos nuestra, así que no guardamos datos tuyos.',
-			'Tus opciones se guardan solo en tu dispositivo (IndexedDB), junto con una marca de que ya viste la introducción (localStorage). Puedes borrarlas con «Vaciar» o borrando los datos del sitio en tu navegador.',
+			'Tus opciones y tus listas guardadas se quedan solo en tu dispositivo (IndexedDB), junto con una marca de que ya viste la introducción (localStorage). Puedes borrarlas con «Vaciar» y la papelera de cada lista, o borrando los datos del sitio en tu navegador.',
 			'Al compartir una ruleta, las opciones van dentro del enlace, después del #. Esa parte nunca se envía a ningún servidor; solo la verá quien reciba el enlace.',
 			'Cloudflare aloja la app y, como cualquier alojamiento web, trata tu dirección IP para servir las páginas. Usamos Cloudflare Web Analytics para contar visitas de forma agregada. No usa cookies ni te identifica.',
 			'No usamos cookies propias.',

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount, tick } from 'svelte';
 	import AdSlot from '$lib/components/AdSlot.svelte';
+	import SavedLists from '$lib/components/SavedLists.svelte';
 	import Tour from '$lib/components/Tour.svelte';
 	import Wheel from '$lib/components/Wheel.svelte';
 	import { fmt, plural } from '$lib/i18n';
@@ -33,7 +34,8 @@
 	const typed = $derived(parseOptions(text));
 	// Something to look at before the first options are typed.
 	const shown = $derived(typed.length ? typed : parseOptions(m.placeholder));
-	const canSpin = $derived(typed.length >= 2 && !spinning);
+	// The example spins too, so a first visit can try the wheel straight away.
+	const canSpin = $derived(shown.length >= 2 && !spinning);
 
 	onMount(async () => {
 		const hash = location.hash;
@@ -64,7 +66,7 @@
 	let pick = -1;
 	function spin() {
 		if (!canSpin) return;
-		const n = typed.length;
+		const n = shown.length;
 		pick = randomInt(n);
 		const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 		duration = reduced ? 0.6 : 4.6 + Math.random() * 0.8;
@@ -75,13 +77,14 @@
 	function stopped() {
 		if (!spinning) return;
 		spinning = false;
-		winner = typed[pick] ?? null;
+		winner = shown[pick] ?? null;
 		navigator.vibrate?.(30);
 		dialog?.showModal();
 	}
 
 	async function removeAndSpin() {
-		const lines = text.split('\n');
+		// Spinning the example: it becomes real text so the winner can go.
+		const lines = typed.length ? text.split('\n') : [...shown];
 		const at = lines.findIndex((l) => l.trim().slice(0, MAX_LABEL) === winner);
 		if (at >= 0) lines.splice(at, 1);
 		text = lines.join('\n');
@@ -157,31 +160,41 @@
 			<button class="btn primary big" onclick={spin} disabled={!canSpin}>
 				{spinning ? m.spinning : m.spin}
 			</button>
-			{#if typed.length < 2}<p class="hint">{m.needTwo}</p>{/if}
+			{#if shown.length < 2}<p class="hint">{m.needTwo}</p>{/if}
 		</section>
 
-		<section class="card editor">
-			<label for="options">
-				<h2>{m.options}</h2>
-				<span>{m.optionsHint} · {plural(m.count, typed.length, data.locale)}</span>
-			</label>
-			<textarea
-				id="options"
-				bind:value={text}
-				placeholder={m.placeholder}
-				rows="9"
-				maxlength={MAX_OPTIONS * (MAX_LABEL + 1)}
+		<div class="side">
+			<section class="card editor">
+				<label for="options">
+					<h2>{m.options}</h2>
+					<span>{m.optionsHint} · {plural(m.count, typed.length, data.locale)}</span>
+				</label>
+				<textarea
+					id="options"
+					bind:value={text}
+					placeholder={m.placeholder}
+					rows="9"
+					maxlength={MAX_OPTIONS * (MAX_LABEL + 1)}
+					disabled={spinning}
+					spellcheck="false"
+				></textarea>
+				<div class="tools">
+					<button class="btn" onclick={shuffle} disabled={spinning || typed.length < 2}
+						>🔀 {m.shuffle}</button
+					>
+					<button class="btn" onclick={share} disabled={typed.length < 2}>🔗 {m.share}</button>
+					<button class="btn" onclick={clear} disabled={spinning || !text}>🧹 {m.clear}</button>
+				</div>
+			</section>
+			<SavedLists
+				{m}
+				locale={data.locale}
+				{text}
 				disabled={spinning}
-				spellcheck="false"
-			></textarea>
-			<div class="tools">
-				<button class="btn" onclick={shuffle} disabled={spinning || typed.length < 2}
-					>🔀 {m.shuffle}</button
-				>
-				<button class="btn" onclick={share} disabled={typed.length < 2}>🔗 {m.share}</button>
-				<button class="btn" onclick={clear} disabled={spinning || !text}>🧹 {m.clear}</button>
-			</div>
-		</section>
+				onload={(t) => (text = t)}
+				onsay={say}
+			/>
+		</div>
 	</div>
 
 	<section class="card faq">
@@ -202,7 +215,7 @@
 	<p id="result" class="winner">{winner}</p>
 	<div class="tools">
 		<button class="btn primary" onclick={again}>🎡 {m.again}</button>
-		{#if typed.length > 2}
+		{#if shown.length > 2}
 			<button class="btn" onclick={removeAndSpin}>✂️ {m.removeAndSpin}</button>
 		{/if}
 		<button class="btn" onclick={() => dialog?.close()}>{m.close}</button>
@@ -327,6 +340,10 @@
 		gap: 8px;
 		margin-top: 12px;
 		justify-content: center;
+	}
+	.side {
+		display: grid;
+		gap: 24px;
 	}
 	.faq {
 		margin-top: 32px;

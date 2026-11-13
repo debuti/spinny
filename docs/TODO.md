@@ -6,6 +6,8 @@
 
 ## Pendiente (Claude)
 
+- Click through saved lists and the example spin in a real browser: this container has no Chromium,
+  so v0.3.0 was checked only with unit tests, svelte-check and the build. Add Playwright e2e.
 - Once AdSense starts serving on apps.nubuza.com/spinny, check in a real browser that the ad, Google's
   consent message and the "Privacy and cookies" footer link work with the CSP.
 
@@ -16,6 +18,8 @@
 
 ## Hecho
 
+- 2026-11-13: Saved lists (save, load, overwrite, delete; up to 50, on the device) and the example
+  options now spin on a first visit. Privacy updated. Released as v0.3.0.
 - 2026-11-13: AdSense on: block `spinny-app` (3283003295) in `slots.app` (renamed from `home`); TLDR.md
   added. Released as v0.2.1.
 - 2026-11-05: First-run wizard with the mascot, repeatable from Settings (requirement 6).

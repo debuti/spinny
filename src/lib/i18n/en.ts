@@ -27,6 +27,23 @@ export const en = {
 	settings: 'Settings',
 	version: 'Version',
 	ad: 'Advertisement',
+	lists: {
+		title: 'Saved lists',
+		hint: 'Save your options before removing anyone, and load them back whenever you like.',
+		name: 'List name',
+		save: 'Save',
+		saved: 'List “{name}” saved',
+		overwrite: 'Replace the saved list “{name}” with the options you have now?',
+		load: 'Load',
+		loadLabel: 'Load the list “{name}”',
+		loaded: 'List “{name}” loaded',
+		replaceCurrent: "Replace the options you have now? They aren't saved in any list.",
+		delete: 'Delete',
+		deleteLabel: 'Delete the list “{name}”',
+		confirmDelete: 'Delete the list “{name}”?',
+		empty: 'No saved lists yet.',
+		full: 'You can keep up to 50 lists. Delete one to make room.'
+	},
 	tour: {
 		label: 'Welcome to Spinny',
 		skip: 'Skip',
@@ -45,7 +62,7 @@ export const en = {
 			},
 			{
 				title: 'Spin and share',
-				text: 'Tap Spin! and every option has the same chance. Then remove the winner and spin again, or share the wheel with a link.'
+				text: 'Tap Spin! and every option has the same chance. Then remove the winner and spin again, or share the wheel with a link. Save your lists to bring them back in one tap.'
 			}
 		]
 	},
@@ -59,6 +76,10 @@ export const en = {
 		{
 			q: 'Where are my options stored?',
 			a: "Only on your device, in the browser's storage. We have no server and no database: we never see what you type."
+		},
+		{
+			q: 'Can I keep several lists?',
+			a: 'Yes. Under the options, give the list a name and tap Save. Load it later to get every option back, for example after removing the winners one by one. You can keep up to 50 lists.'
 		},
 		{
 			q: 'How do I share a wheel?',
@@ -79,9 +100,9 @@ export const en = {
 	privacy: {
 		title: 'Privacy',
 		body: [
-			'Last updated: 5 November 2026.',
+			'Last updated: 13 November 2026.',
 			'Spinny is made by nubuza (nubuza.com), which is the data controller. Contact: me@nubuza.com. The app runs entirely in your browser: no accounts, no server, no database of ours, so we hold no data about you.',
-			'Your options are stored only on your device (IndexedDB), along with a note that you have seen the intro (localStorage). Delete them with “Clear” or by clearing the site data in your browser.',
+			'Your options and saved lists are stored only on your device (IndexedDB), along with a note that you have seen the intro (localStorage). Delete them with “Clear” and the list bin, or by clearing the site data in your browser.',
 			'When you share a wheel, the options go inside the link, after the #. That part is never sent to any server; only whoever gets the link sees it.',
 			'Cloudflare hosts the app and, like any web host, handles your IP address to serve the pages. We use Cloudflare Web Analytics to count visits in aggregate. It uses no cookies and does not identify you.',
 			'We set no cookies of our own.',

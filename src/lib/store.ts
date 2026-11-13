@@ -1,6 +1,7 @@
 import { createStore, get, set } from 'idb-keyval';
 import * as v from 'valibot';
 import { MAX_LABEL, MAX_OPTIONS } from './wheel';
+import { SavedLists, type SavedList } from './lists';
 
 /**
  * The options text, on this device only. apps.nubuza.com apps share an origin, so the
@@ -19,4 +20,16 @@ export async function loadText(): Promise<string | undefined> {
 
 export async function saveText(text: string): Promise<void> {
 	if (store) await set(KEY, text, store);
+}
+
+const LISTS = 'lists';
+
+export async function loadLists(): Promise<SavedList[]> {
+	if (!store) return [];
+	const parsed = v.safeParse(SavedLists, await get(LISTS, store));
+	return parsed.success ? parsed.output : [];
+}
+
+export async function saveLists(lists: SavedList[]): Promise<void> {
+	if (store) await set(LISTS, lists, store);
 }
