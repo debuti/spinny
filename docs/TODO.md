@@ -14,7 +14,8 @@
 ## Excepciones acordadas
 
 - No Google Drive sync or Drive icon (requirements 2 and 3): a wheel has nothing worth syncing. The
-  owner agreed on 2026-11-05 to add it only if it ever makes sense.
+  owner agreed on 2026-11-05 to add it only if it ever makes sense, and confirmed it on 2026-11-13
+  after saved lists were added.
 
 ## Hecho
 
