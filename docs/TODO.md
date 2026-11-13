@@ -2,18 +2,12 @@
 
 ## Pendiente (dueño)
 
-Turn on AdSense once the account is approved (the app is ready and off until then):
-
-1. Request approval in AdSense for `apps.nubuza.com/spinny`. The pages already carry the
-   `google-adsense-account` meta tag.
-2. Once approved, go to AdSense → Ads → By ad unit, create a responsive display block and send
-   Claude its ID.
+- Nothing right now.
 
 ## Pendiente (Claude)
 
-- When the owner sends the block ID: put it in `slots.home` of `monetization.config.json` and check
-  in a browser that the ad, Google's consent message and the "Privacy and cookies" footer link
-  work with the CSP. The AdSense CSP origins in `svelte.config.js` have never run live.
+- Once AdSense starts serving on apps.nubuza.com/spinny, check in a real browser that the ad, Google's
+  consent message and the "Privacy and cookies" footer link work with the CSP.
 
 ## Excepciones acordadas
 
@@ -22,6 +16,8 @@ Turn on AdSense once the account is approved (the app is ready and off until the
 
 ## Hecho
 
+- 2026-11-13: AdSense on: block `spinny-app` (3283003295) in `slots.app` (renamed from `home`); TLDR.md
+  added. Released as v0.2.1.
 - 2026-11-05: First-run wizard with the mascot, repeatable from Settings (requirement 6).
 - 2026-11-05: AdSense prepared and off: `monetization.config.json`, `AdSlot`, conditional CSP,
   privacy paragraph and consent link (requirement 5).

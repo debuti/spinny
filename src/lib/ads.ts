@@ -2,8 +2,8 @@ import config from '../../monetization.config.json';
 
 /** Public IDs. An empty block ID keeps ads off: no script, no block, no CSP opening. */
 export const ADS_CLIENT = config.adsense.client;
-export const ADS_SLOT_HOME: string = config.adsense.slots.home;
-export const ADS_ON = Boolean(ADS_SLOT_HOME);
+export const ADS_SLOT_APP: string = config.adsense.slots.app;
+export const ADS_ON = Boolean(ADS_SLOT_APP);
 
 type AdsWindow = Window & {
 	adsbygoogle?: object[];

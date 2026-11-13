@@ -11,7 +11,7 @@ The classic decision wheel, the nubuza way: quick, kawaii, private, free to run.
 | ✅ | Options stored on the device with idb-keyval, **not encrypted**: a list of choices the user writes to share, unlike BLP/ATS data. Revisit if wheels ever hold anything personal. |
 | ✅ | Sharing via URL fragment, validated with valibot (≤100 options, ≤60 chars). |
 | ✅ | **Exception to the nubuza rules, agreed with the owner: no Google Drive sync or Drive icon.** A wheel has nothing worth syncing; add it if that ever changes. |
-| ✅ | AdSense prepared but off until the account is approved: with no block ID in `monetization.config.json` there is no script, block or CSP opening. |
+| ✅ | AdSense: one block, `spinny-app` (`slots.app`), on the wheel page below the lists; the CSP opens Google's origins only because a block ID is set. The owner agreed on 2026-11-13 to keep a single block. |
 | ✅ | No Android in v0.1. |
 
 ## Costs

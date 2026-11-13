@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { ADS_CLIENT, ADS_ON, ADS_SLOT_HOME, requestAd } from '$lib/ads';
+	import { ADS_CLIENT, ADS_ON, ADS_SLOT_APP, requestAd } from '$lib/ads';
 
 	let { label }: { label: string } = $props();
 
@@ -15,7 +15,7 @@
 		<ins
 			class="adsbygoogle"
 			data-ad-client={ADS_CLIENT}
-			data-ad-slot={ADS_SLOT_HOME}
+			data-ad-slot={ADS_SLOT_APP}
 			data-ad-format="auto"
 			data-full-width-responsive="true"
 		></ins>
