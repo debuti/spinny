@@ -109,14 +109,15 @@ export const es: Messages = {
 			'Cloudflare aloja la app y, como cualquier alojamiento web, trata tu dirección IP para servir las páginas. Usamos Cloudflare Web Analytics para contar visitas de forma agregada. No usa cookies ni te identifica.',
 			'No usamos cookies propias.',
 			'Spinny no está dirigida a menores de 14 años.',
-			'Tienes los derechos que te da el RGPD, como los de acceso, supresión y oposición. Como tus datos están en tu dispositivo, puedes borrarlos tú en cualquier momento. Para todo lo demás, escribe a me@nubuza.com. También puedes reclamar ante la Agencia Española de Protección de Datos (aepd.es).'
+			'Tienes los derechos que te da el RGPD, como los de acceso, supresión y oposición. Como tus datos están en tu dispositivo, puedes borrarlos tú en cualquier momento. Para todo lo demás, escribe a me@nubuza.com. También puedes reclamar ante la Agencia Española de Protección de Datos (www.aepd.es).',
+			'También se aplican la política de privacidad y los términos generales de nubuza: nubuza.com/es/privacy/, nubuza.com/es/terms/.'
 		],
-		ads: 'Spinny muestra anuncios servidos por Google AdSense. Google y sus socios pueden usar cookies y datos como identificadores publicitarios, tu dirección IP o ubicación aproximada y tus interacciones con los anuncios. En la UE y el Reino Unido, el mensaje de consentimiento de Google te pide antes tu elección, y puedes cambiarla con «Privacidad y cookies» al final de la página. Más información en policies.google.com/technologies/ads.'
+		ads: 'Spinny muestra anuncios servidos por Google AdSense. Google y sus socios pueden usar cookies y datos como identificadores publicitarios, tu dirección IP o ubicación aproximada y tus interacciones con los anuncios. En la UE y el Reino Unido, el mensaje de consentimiento de Google te pide antes tu elección, y puedes cambiarla con «Privacidad y cookies» al final de la página. Puedes desactivar los anuncios personalizados en adssettings.google.com. Cómo usa Google los datos: policies.google.com/technologies/partner-sites.'
 	},
 	terms: {
 		title: 'Términos',
 		body: [
-			'Última actualización: 5 de noviembre de 2026.',
+			'Última actualización: 13 de noviembre de 2026.',
 			'Spinny es un producto de nubuza («nosotros»). Al usarlo aceptas estos términos. Si no estás de acuerdo, no lo uses. Si tienes menos de 14 años, tu madre, padre o tutor debe aceptarlos por ti.',
 			'Spinny es gratis. Úsala para decidir cosas del día a día; no la uses para decisiones importantes, sorteos con premio ni apuestas.',
 			'Lo que escribes es tuyo y nunca lo vemos. Eres responsable de lo que escribas y compartas. No compartas datos personales de otras personas en una ruleta.',
@@ -126,7 +127,8 @@ export const es: Messages = {
 			'Responsabilidad. En la medida en que la ley lo permita, no respondemos de daños indirectos o consecuentes, lucro cesante, pérdida de datos, material, tiempo o dinero desperdiciados, ni de cómo tú u otras personas uséis la app o lo que produce. Si la usas para un negocio o una profesión, nuestra responsabilidad total frente a ti se limita a 1 €. Si alguien nos reclama porque has incumplido estos términos o la ley al usar la app, respondes tú, en la medida en que la ley lo permita. Nada de estos términos limita la responsabilidad que la ley no permite limitar, como la derivada de dolo, culpa grave, muerte o lesiones, ni tus derechos como consumidor.',
 			'Cambios en estos términos. Podemos actualizar estos términos; la nueva versión se publica en esta página con una fecha nueva. Si sigues usando la app después de un cambio, aceptas la nueva versión.',
 			'Ley aplicable y reclamaciones. Si algo va mal, escríbenos primero a me@nubuza.com: la mayoría de los problemas se arreglan rápido. Estos términos se rigen por la ley española. Si usas la app como consumidor, conservas además la protección de las leyes imperativas del país donde vives y puedes reclamar ante los tribunales de tu domicilio. Si la usas para un negocio o una profesión, son competentes en exclusiva los tribunales de España. Si alguna parte de estos términos resulta no válida, el resto sigue aplicándose.',
-			'La app, su diseño y su código son de nubuza. Copyright (c) 2026 nubuza, todos los derechos reservados.'
+			'La app, su diseño y su código son de nubuza. Copyright (c) 2026 nubuza, todos los derechos reservados.',
+			'También se aplican los términos y la política de privacidad generales de nubuza: nubuza.com/es/terms/, nubuza.com/es/privacy/.'
 		]
 	}
 };

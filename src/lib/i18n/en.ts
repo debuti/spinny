@@ -107,14 +107,15 @@ export const en = {
 			'Cloudflare hosts the app and, like any web host, handles your IP address to serve the pages. We use Cloudflare Web Analytics to count visits in aggregate. It uses no cookies and does not identify you.',
 			'We set no cookies of our own.',
 			'Spinny is not aimed at children under 14.',
-			'You have the rights the GDPR gives you, such as access, erasure and objection. As your data lives on your device, you can delete it yourself at any time. For anything else write to me@nubuza.com. You can also complain to the Spanish data protection agency (aepd.es).'
+			'You have the rights the GDPR gives you, such as access, erasure and objection. As your data lives on your device, you can delete it yourself at any time. For anything else write to me@nubuza.com. You can also complain to the Spanish data protection agency (www.aepd.es).',
+			'nubuza’s general privacy policy and terms also apply: nubuza.com/privacy/, nubuza.com/terms/.'
 		],
-		ads: 'Spinny shows ads served by Google AdSense. Google and its partners may use cookies and data such as advertising identifiers, your IP address or approximate location, and your interactions with the ads. In the EU and the UK, Google’s consent message asks for your choice first, and you can change it with “Privacy and cookies” at the bottom of the page. More at policies.google.com/technologies/ads.'
+		ads: 'Spinny shows ads served by Google AdSense. Google and its partners may use cookies and data such as advertising identifiers, your IP address or approximate location, and your interactions with the ads. In the EU and the UK, Google’s consent message asks for your choice first, and you can change it with “Privacy and cookies” at the bottom of the page. You can turn off personalised ads at adssettings.google.com. How Google uses data: policies.google.com/technologies/partner-sites.'
 	},
 	terms: {
 		title: 'Terms',
 		body: [
-			'Last updated: 5 November 2026.',
+			'Last updated: 13 November 2026.',
 			'Spinny is made by nubuza ("we", "us"). By using it you accept these terms. If you don’t agree, please don’t use it. If you are under 14, a parent or guardian must accept them for you.',
 			'Spinny is free. Use it for everyday choices; not for important decisions, prize draws or gambling.',
 			"What you type is yours and we never see it. You're responsible for what you type and share. Don't put other people's personal data in a wheel.",
@@ -124,7 +125,8 @@ export const en = {
 			'Liability. To the extent the law allows, we are not liable for indirect or consequential damages, loss of profit, lost data, wasted material, time or money, or for how you or anyone else uses the app or what it produces. If you use the app for a business or profession, our total liability to you is limited to €1. If someone makes a claim against us because you broke these terms or the law while using the app, you are responsible for it, to the extent the law allows. Nothing in these terms limits liability that the law doesn’t allow to be limited, such as for intent, gross negligence, death or personal injury, or your rights as a consumer.',
 			'Changes to these terms. We may update these terms; the new version is published on this page with a new date. If you keep using the app after a change, you accept the new terms.',
 			'Law and disputes. If something goes wrong, please write to us first at me@nubuza.com: most problems can be fixed quickly. These terms are governed by the laws of Spain. If you use the app as a consumer, you also keep the protection of the mandatory laws of the country where you live, and you can bring a claim in your local courts. If you use it for a business or profession, the courts of Spain have exclusive jurisdiction. If any part of these terms turns out to be invalid, the rest still applies.',
-			'The app, its design and its code belong to nubuza. Copyright (c) 2026 nubuza, all rights reserved.'
+			'The app, its design and its code belong to nubuza. Copyright (c) 2026 nubuza, all rights reserved.',
+			'nubuza’s general terms and privacy policy also apply: nubuza.com/terms/, nubuza.com/privacy/.'
 		]
 	}
 };

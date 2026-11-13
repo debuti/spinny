@@ -19,6 +19,8 @@
 
 ## Hecho
 
+- 2026-11-13: Privacy and terms link to nubuza's umbrella pages (nubuza.com/privacy/, /terms/,
+  /es/ in Spanish); ads paragraph adds adssettings.google.com. v0.3.1.
 - 2026-11-13: Saved lists (save, load, overwrite, delete; up to 50, on the device) and the example
   options now spin on a first visit. Privacy updated. Released as v0.3.0.
 - 2026-11-13: AdSense on: block `spinny-app` (3283003295) in `slots.app` (renamed from `home`); TLDR.md
